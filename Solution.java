@@ -8,27 +8,16 @@ public class Solution {
 
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        long n = in.nextLong();
-        long j = in.nextLong();
-        double k = in.nextDouble();
-        int count = 0;
-        for(long i = n;i <= j;i++){
-            long temp = i;
-            long reverse = 0;
-            while(temp > 0){
-                reverse += (temp % 10);
-                temp = temp/10;
-                if(temp == 0){break;}
-                reverse = reverse * 10;
-            }
-            //System.out.println(reverse);
-            long difference = Math.abs(i-reverse);
-            //System.out.println(difference);
-            double result = (double)difference/k;
-            //System.out.println(result);
-            if((result % 1) == 0)
-                count++;
+        int n = in.nextInt();
+        int liked = 0;
+        int disliked = 0;
+        double sent = 5;
+        int total = 0;
+        for(int i = 0; i < n; i ++ ){
+            liked = (int) Math.floor(sent/2);
+            sent = liked * 3;
+            total += liked;
         }
-        System.out.println(count);
+        System.out.println(total);
     }
 }
