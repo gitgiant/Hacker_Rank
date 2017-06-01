@@ -6,18 +6,25 @@ import java.util.regex.*;
 
 public class Solution {
 
+    static int saveThePrisoner(int n, int m, int s) {
+        if((s-1 + m)% n==0)
+            return n;
+        else
+            return (s-1 + m)% n;
+    }
+
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        int n = in.nextInt();
-        int liked = 0;
-        int disliked = 0;
-        double sent = 5;
-        int total = 0;
-        for(int i = 0; i < n; i ++ ){
-            liked = (int) Math.floor(sent/2);
-            sent = liked * 3;
-            total += liked;
+        int t = in.nextInt();
+        int[] result = new int[t];
+        for (int a0 = 0; a0 < t; a0++) {
+            int n = in.nextInt();
+            int m = in.nextInt();
+            int s = in.nextInt();
+            result[a0] = saveThePrisoner(n, m, s);
         }
-        System.out.println(total);
+        for (int a0 = 0; a0 < t; a0++) {
+            System.out.println(result[a0]);
+        }
     }
 }
